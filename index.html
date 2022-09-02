@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FIT calc imc</title>
+        <link href="index.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="data">
+                <div class="form">
+                    <div class="row">
+                        <label>Altura</label>
+                        <input id="altura" value="0.00" placeholder="digite sua altura..." />
+                    </div>
+                    <div class="row">
+                        <label>Peso</label>
+                        <input id="peso" value="0.00" placeholder="digite seu peso..." />
+                    </div>
+                    <div class="row">
+                        <button 
+                            type="button"
+                            id="main-action"
+                        >
+                            Calcular...
+                        </button>
+                    </div>
+                </div><!-- form -->
+                <hr />
+                <div class="result">
+                    <span>Seu IMC &eacute;: <label id="imc"></label></span>
+                </div><!-- result -->
+            </div>
+        </div>
+    </body>
+    <script lang="text/javascript" src="index.js"></script>
+</html>
