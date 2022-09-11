@@ -16,6 +16,7 @@ class ImcView {
     }
 
     render() {
+        console.log(this.state.person);
         if (this.state.person == null)
             return '<div class="result"></div>';
 
