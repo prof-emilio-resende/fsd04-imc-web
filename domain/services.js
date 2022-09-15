@@ -18,6 +18,10 @@ class ImcCalculatorService {
                             rawObj['imcDescription']);
                         callback(imcPerson);
                     });
+            })
+            .catch(function(err) {
+                console.error("sth went wrong...");
+                console.err(err);
             });
     }
 }

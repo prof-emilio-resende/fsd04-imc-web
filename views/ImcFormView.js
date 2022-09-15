@@ -1,14 +1,9 @@
-class ImcFormView {
+class ImcFormView extends ViewComponent {
     constructor() {
-        this.element = document.querySelector('ImcFormView');
-        if (this.element === undefined || this.element === null) {
-            throw Error('Nao localizei ImcFormView tag...');
-        }
-        this.state = {
+        super();
+        this.setState({
             person: new ImcPerson(0, 0, 0, '')
-        };
-
-        this.paint();
+        });
     }
 
     render() {
@@ -34,14 +29,5 @@ class ImcFormView {
             </div>
         </div>
         `;
-    }
-
-    setState(newState) {
-        this.state = newState;
-        this.paint();
-    }
-
-    paint() {
-        this.element.innerHTML = this.render();
     }
 }

@@ -1,14 +1,6 @@
-class ImcView {
+class ImcView extends ViewComponent {
     constructor() {
-        this.element = document.querySelector('ImcView');
-        if (this.element === undefined || this.element === null) {
-            throw Error('Nao localizei ImcView tag...');
-        }
-        this.state = {
-            person: null
-        };
-
-        this.paint();
+        super();
     }
 
     translateImcToText(imcPerson) {
@@ -16,7 +8,7 @@ class ImcView {
     }
 
     render() {
-        if (this.state.person == null)
+        if (this.state == null || this.state.person == null)
             return '<div class="result"></div>';
 
         return `
@@ -25,14 +17,5 @@ class ImcView {
                 <label id="imc">${this.translateImcToText(this.state.person)}</label>
             </span>
         </div>`;
-    }
-
-    setState(newState) {
-        this.state = newState;
-        this.paint();
-    }
-
-    paint() {
-        this.element.innerHTML = this.render();
     }
 }

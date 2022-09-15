@@ -1,9 +1,20 @@
 class ImcController {
-    constructor(viewObj) {
+    constructor() {
         this.heightElem = document.querySelector('#altura');
         this.weightElem = document.querySelector('#peso');
         this.svc = new ImcCalculatorService();
-        this.viewObj = viewObj;
+        this.stateListeners = [];
+    }
+
+    registerStateListener(obj) {
+        this.stateListeners.push(obj);
+    }
+
+    notifyStateChange(state) {
+        this.stateListeners.forEach(o => {
+            console.log(o);
+            o.setState(state)
+        });
     }
 
     doCalculateImc() {
@@ -13,10 +24,9 @@ class ImcController {
         var person = new Person(height, weight);
         
         this.svc.calculateImc(person.asJson(), (imcObj) => {
-            this.viewObj.setState({
+            this.notifyStateChange({
                 person: imcObj
-            })
-            
+            });
         });
     }
 
