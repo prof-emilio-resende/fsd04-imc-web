@@ -1,0 +1,27 @@
+{
+  "name": "imc-calc",
+  "version": "1.0.0",
+  "description": "simple imc calculator",
+  "main": "app/initializers/bootstrap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prof-emilio-resende/fsd04-imc-web.git"
+  },
+  "keywords": [
+    "imc",
+    "fit",
+    "js"
+  ],
+  "author": "emurta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prof-emilio-resende/fsd04-imc-web/issues"
+  },
+  "homepage": "https://github.com/prof-emilio-resende/fsd04-imc-web#readme",
+  "dependencies": {
+    "systemjs": "^6.8.3"
+  }
+}
