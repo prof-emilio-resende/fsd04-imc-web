@@ -69,3 +69,11 @@
     text-align: center;
     box-shadow: 2px 2px 2px #000;
 }
+
+table {
+    width: 100%;
+}
+
+table tr td {
+    border: solid 1px #666;
+}

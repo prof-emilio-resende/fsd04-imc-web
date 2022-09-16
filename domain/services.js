@@ -2,7 +2,19 @@ class ImcCalculatorService {
     constructor() {
         this._hostname = 'http://localhost:8080';
         this._path = '/imc/calculate';
+        this._getTablePath = '/imc/table'
         this._xhr = new HttpUtil();
+    }
+
+    getTable(callback) {
+        this._xhr
+            .get(this._hostname, this._getTablePath)
+            .then(function(response) {
+                response
+                    .json()
+                    .then(callback)
+            })
+            .catch(xhrErrorHandler)
     }
 
     calculateImc(person, callback) {
@@ -19,9 +31,11 @@ class ImcCalculatorService {
                         callback(imcPerson);
                     });
             })
-            .catch(function(err) {
-                console.error("sth went wrong...");
-                console.err(err);
-            });
+            .catch(xhrErrorHandler);
     }
+}
+
+function xhrErrorHandler(err) {
+    console.error("sth went wrong...");
+    console.err(err);
 }

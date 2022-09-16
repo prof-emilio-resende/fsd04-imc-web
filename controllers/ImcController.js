@@ -1,20 +1,9 @@
-class ImcController {
+class ImcController extends Controller {
     constructor() {
+        super();
         this.heightElem = document.querySelector('#altura');
         this.weightElem = document.querySelector('#peso');
         this.svc = new ImcCalculatorService();
-        this.stateListeners = [];
-    }
-
-    registerStateListener(obj) {
-        this.stateListeners.push(obj);
-    }
-
-    notifyStateChange(state) {
-        this.stateListeners.forEach(o => {
-            console.log(o);
-            o.setState(state)
-        });
     }
 
     doCalculateImc() {
@@ -29,7 +18,4 @@ class ImcController {
             });
         });
     }
-
-    
 }
-
