@@ -1,19 +1,20 @@
 export default class HttpUtil {
-    constructor() {}
+  constructor() {}
 
-    get(hostname, path) {
-        return fetch(`${hostname}${path}`)
-    }
+  get(hostname, path) {
+    return fetch(`${hostname}${path}`);
+  }
 
-    post(hostname, path, obj) {
-        const opt = {
-            method: 'post',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(obj)
-        };
+  post(hostname, path, obj) {
+    const opt = {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(obj)
+    };
+    return fetch(`${hostname}${path}`, opt);
+  }
 
-        return fetch(`${hostname}${path}`, opt);
-    }
 }
+//# sourceMappingURL=HttpUtil.js.map

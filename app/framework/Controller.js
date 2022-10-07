@@ -1,16 +1,18 @@
 export default class Controller {
-    constructor() {
-        this.stateListeners = [];
-    }
+  constructor() {
+    this.stateListeners = [];
+  }
 
-    registerStateListener(obj) {
-        this.stateListeners.push(obj);
-    }
+  registerStateListener(obj) {
+    this.stateListeners.push(obj);
+  }
 
-    notifyStateChange(state) {
-        this.stateListeners.forEach(o => {
-            console.log(o);
-            o.setState(state)
-        });
-    }
+  notifyStateChange(state) {
+    this.stateListeners.forEach(o => {
+      console.log(o);
+      o.setState(state);
+    });
+  }
+
 }
+//# sourceMappingURL=Controller.js.map

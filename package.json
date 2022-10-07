@@ -2,9 +2,12 @@
   "name": "imc-calc",
   "version": "1.0.0",
   "description": "simple imc calculator",
-  "main": "app/initializers/bootstrap.js",
+  "main": "src/initializers/bootstrap.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode=development --progress --config webpack.config.js",
+    "build": "webpack --mode=development --progress --config webpack.config.js",
+    "babel-build": "babel src --out-dir app --source-maps"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,22 @@
   },
   "homepage": "https://github.com/prof-emilio-resende/fsd04-imc-web#readme",
   "dependencies": {
-    "systemjs": "^6.8.3"
+    "@babel/runtime": "^7.13.9"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.2.0",
+    "css-loader": "^5.1.1",
+    "mini-css-extract-plugin": "^1.3.9",
+    "core-js": "^3.9.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^3.11.2",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/plugin-transform-arrow-functions": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.9",
+    "@babel/plugin-transform-spread": "^7.13.0",
+    "@babel/preset-env": "^7.13.9",
+    "babel-loader": "^8.2.2"
   }
 }

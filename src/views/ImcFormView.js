@@ -1,16 +1,18 @@
 import ViewComponent from '../framework/ViewComponent.js';
 import { ImcPerson } from '../domain/models.js';
-export default class ImcFormView extends ViewComponent {
-  constructor() {
-    super();
-    this.setState({
-      person: new ImcPerson(0, 0, 0, '')
-    });
-  }
 
-  render() {
-    if (this.state.person == null) return null;
-    return `
+export default class ImcFormView extends ViewComponent {
+    constructor() {
+        super();
+        this.setState({
+            person: new ImcPerson(0, 0, 0, '')
+        });
+    }
+
+    render() {
+        if (this.state.person == null) return null;
+
+        return `
         <div class="form">
             <div class="row">
                 <label>Altura</label>
@@ -30,7 +32,5 @@ export default class ImcFormView extends ViewComponent {
             </div>
         </div>
         `;
-  }
-
+    }
 }
-//# sourceMappingURL=ImcFormView.js.map
