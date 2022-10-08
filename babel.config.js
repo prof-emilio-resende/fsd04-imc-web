@@ -16,6 +16,7 @@ module.export = {
     "plugins": [
         "@babel/transform-runtime", 
         "@babel/plugin-transform-spread", 
-        "@babel/plugin-transform-arrow-functions"
+        "@babel/plugin-transform-arrow-functions",
+        "@babel/plugin-syntax-dynamic-import"
     ]
 }

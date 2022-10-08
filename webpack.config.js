@@ -41,14 +41,28 @@ const config = {
 }
 
 module.exports = (env, argv) => {
-    config.devtool = 'source-map';
     config.mode = argv.mode;
-    plugins.push(new HtmlWebpackPlugin({
-        hash: true,
-        minify: true,
-        template: __dirname + "/template.html",
-        filename: "index.html"
-    }));
+
+    if (argv.mode === 'production') {
+        plugins.push(new HtmlWebpackPlugin({
+            hash: true,
+            minify: {
+                html5: true,
+                collapseWhitespace: true,
+                removeComments: true,
+                },
+            template: __dirname + "/template.html",
+            filename: "index.html"
+        }));
+    } else {
+        config.devtool = 'source-map';
+        plugins.push(new HtmlWebpackPlugin({
+            hash: true,
+            minify: false,
+            template: __dirname + "/template.html",
+            filename: "index.html"
+        }));
+    }
 
     config.plugins = plugins;
     return config;

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --mode=development --progress --config webpack.config.js",
-    "build": "webpack --mode=development --progress --config webpack.config.js",
+    "build-dev": "webpack --mode=development --progress --config webpack.config.js",
+    "build": "webpack --mode=production --progress --config webpack.config.js",
     "babel-build": "babel src --out-dir app --source-maps"
   },
   "repository": {
