@@ -1,3 +1,5 @@
+@import 'theme';
+
 @media only screen and (max-width: 768px) {
     .data .form .row {
         flex-direction: column;
@@ -62,12 +64,12 @@
 #main-action {
     margin-top: 2em;
     display: inline;
-    background-color: #3B64CE;
     border: 1px solid #3B64CE;
     color: #FFF;
     min-width: 50px;
     text-align: center;
     box-shadow: 2px 2px 2px #000;
+    @include blueTheme(false);
 }
 
 table {
